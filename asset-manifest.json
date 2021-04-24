@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/ecommerce-react-firebase/static/css/main.763b6afb.chunk.css",
+    "main.js": "/ecommerce-react-firebase/static/js/main.98e06bdd.chunk.js",
+    "main.js.map": "/ecommerce-react-firebase/static/js/main.98e06bdd.chunk.js.map",
+    "runtime-main.js": "/ecommerce-react-firebase/static/js/runtime-main.b0ae2145.js",
+    "runtime-main.js.map": "/ecommerce-react-firebase/static/js/runtime-main.b0ae2145.js.map",
+    "static/js/2.839f595e.chunk.js": "/ecommerce-react-firebase/static/js/2.839f595e.chunk.js",
+    "static/js/2.839f595e.chunk.js.map": "/ecommerce-react-firebase/static/js/2.839f595e.chunk.js.map",
+    "static/js/3.69c6ed5a.chunk.js": "/ecommerce-react-firebase/static/js/3.69c6ed5a.chunk.js",
+    "static/js/3.69c6ed5a.chunk.js.map": "/ecommerce-react-firebase/static/js/3.69c6ed5a.chunk.js.map",
+    "index.html": "/ecommerce-react-firebase/index.html",
+    "service-worker.js": "/ecommerce-react-firebase/service-worker.js",
+    "service-worker.js.map": "/ecommerce-react-firebase/service-worker.js.map",
+    "static/css/main.763b6afb.chunk.css.map": "/ecommerce-react-firebase/static/css/main.763b6afb.chunk.css.map",
+    "static/js/2.839f595e.chunk.js.LICENSE.txt": "/ecommerce-react-firebase/static/js/2.839f595e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b0ae2145.js",
+    "static/js/2.839f595e.chunk.js",
+    "static/css/main.763b6afb.chunk.css",
+    "static/js/main.98e06bdd.chunk.js"
+  ]
+}
