@@ -1,12 +1,28 @@
-
-.header{
+.header {
     width: 100%;
-}
-.brand {
-    img {
-        width: 100px;
+    height: 10%;
+    display: flex;
+    transition: all 0.6s ease;
+    .logo-container {
+        width: 80%;
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
     }
+    .option-container {
+        width: 20%;
+        float: left;
+        display: flex;
+        flex-direction: row;
+        padding: 2px 10px;
+        margin-top: 5%;
+        .option{
+            padding: 0px 14px;
+            align-items: center;
+            justify-content:space-between;
+        }
+    }
+ 
 }
-.menu {
-    float: left;
-}
+
