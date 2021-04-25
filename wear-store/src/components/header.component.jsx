@@ -1,8 +1,9 @@
 import React from 'react';
 import './header.component.scss'
 import { Link } from 'react-router-dom'
+import { auth } from '../firebase/firebase.util';
 
-const HeaderComp = () => (
+const HeaderComp = ({ currentUser }) => (
     <div className="header">
 
         <div className="logo-container">
@@ -13,14 +14,14 @@ const HeaderComp = () => (
 
         <div className="option-container">
             <div className="option">
-                <Link to="/"  style={{paddingLeft: 13,color:'black',  fontSize: 'large'}}> Home </Link>
+                <Link to="/"  className="link"> Home </Link>
             </div>
             <div className="option">
-                <Link to="/Shop"  style={{paddingLeft: 13,color:'black', fontSize: 'large'}} > Shop</Link>
+                <Link to="/Shop" className="link" > Shop</Link>
             </div>
             <div className="option">
-                <Link to="/SignInSignUp"  style={{paddingLeft: 13,color:'black', fontSize: 'large'}} > Login</Link>
-            </div>
+                {currentUser ? <div className="link" onClick={()=>{auth.signOut();}}> Sign out </div> : <Link to="/SignInSignUp" className="link" > Login</Link>}
+            </div> 
         </div>
     </div>
 

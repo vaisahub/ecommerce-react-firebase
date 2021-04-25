@@ -1,25 +1,50 @@
 import React from 'react';
 import './App.scss';
 import HeaderComp from './components/header.component';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import HomePage from './components/pages/homepage.components';
 import Shop from './components/pages/shop.component';
 import SignInSignUp from './components/pages/signin-signup/signin-signup.component';
-function App() {
-  return (
-    <div className="App">
-      <HeaderComp/>
+import { auth } from './firebase/firebase.util';
 
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/Shop" component={Shop} />
-        <Route exact path="/SignInSignUp" component={SignInSignUp} />
-        
-      </Switch>
+class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      currentUser: null
+    }
+
+  }
+
+  unSubsCribeFromAuth = null;
+  componentDidMount() {
+    this.unSubsCribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user })
+      console.log(user)
+      this.props.history.push(`/`)
+    })
+
+  }
+  componentWillUnmount() {
+    this.unSubsCribeFromAuth();
+  }
+  render() {
+    return (
+      <div className="App">
+        <HeaderComp currentUser={this.state.currentUser} />
+
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/Shop" component={Shop} />
+          <Route exact path="/SignInSignUp" component={SignInSignUp} />
+
+        </Switch>
 
 
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);

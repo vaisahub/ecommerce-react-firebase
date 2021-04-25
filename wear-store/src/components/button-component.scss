@@ -1,0 +1,10 @@
+.custom-button {
+    padding: 10px;
+    border: 1px solid gray;
+    background-color: white;
+    margin: 0px 10px;
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+}
