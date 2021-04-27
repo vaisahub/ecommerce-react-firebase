@@ -1,0 +1,13 @@
+.collection-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .collections {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .title {
+        align-items: start;
+    }
+}
