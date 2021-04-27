@@ -5,7 +5,7 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 import HomePage from './components/pages/homepage.components';
 import Shop from './components/pages/shop.component';
 import SignInSignUp from './components/pages/signin-signup/signin-signup.component';
-import { auth } from './firebase/firebase.util';
+import { auth, createUserProfileDoc } from './firebase/firebase.util';
 
 class App extends React.Component {
 
@@ -19,10 +19,11 @@ class App extends React.Component {
 
   unSubsCribeFromAuth = null;
   componentDidMount() {
-    this.unSubsCribeFromAuth = auth.onAuthStateChanged(user => {
+    this.unSubsCribeFromAuth = auth.onAuthStateChanged(async user => {
       this.setState({ currentUser: user })
       console.log(user)
-      this.props.history.push(`/`)
+      this.props.history.push(`/`);
+      createUserProfileDoc(user);
     })
 
   }

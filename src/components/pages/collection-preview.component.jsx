@@ -4,14 +4,14 @@ import './collection-preview.component.scss';
 const CollectionPreview = ({ title, items }) => {
 
     return (
-        <div class="collection-preview">
+        <div className="collection-preview">
             <div className="title">
                 <h2>
                     {title}
                 </h2>
             </div>
 
-            <div class="collections">
+            <div className="collections">
 
                 {items.filter((data, inx) => inx < 4).map(({ id, ...otherKeys }) => {
                     return (
