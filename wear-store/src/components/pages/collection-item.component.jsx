@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomButton from '../button-component';
 import './collection-item.component.scss';
 
 const CollectionItem = ({ price, imageUrl, name }) => {
@@ -8,7 +9,9 @@ const CollectionItem = ({ price, imageUrl, name }) => {
             <div className="img-container">
                 <div className="item-img" style={{ backgroundImage: `url(${imageUrl})`, backgroundSize: 'cover' }}>  </div>
                 <div className="item-content">
-                    Add to cart
+                    <CustomButton >
+                        Add to cart
+                    </CustomButton>
                 </div>
             </div>
             <div className="item-footer">

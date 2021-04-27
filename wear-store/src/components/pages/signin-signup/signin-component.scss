@@ -4,3 +4,35 @@
 .sub-title{
     color: gray;
 }
+
+.button-group{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+@media screen and (max-width: 600px)  {
+    .sign-in {
+        width: 80vw;
+    }
+    .button-group{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    
+    }
+    
+}
+@media screen and (max-width: 900px)  {
+    .sign-in {
+        width: 80vw;
+    }
+    .button-group{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    
+    }
+    
+}
