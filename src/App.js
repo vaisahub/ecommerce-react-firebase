@@ -19,11 +19,29 @@ class App extends React.Component {
 
   unSubsCribeFromAuth = null;
   componentDidMount() {
-    this.unSubsCribeFromAuth = auth.onAuthStateChanged(async user => {
-      this.setState({ currentUser: user })
-      console.log(user)
-      this.props.history.push(`/`);
-      createUserProfileDoc(user);
+    this.unSubsCribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+
+        this.props.history.push(`/`);
+        const userRef = await createUserProfileDoc(userAuth);
+
+        userRef.onSnapshot(async snapShot => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+
+            }
+          },()=>{
+            console.log(this.state);
+          });
+         
+        })
+      } else {
+        this.setState({
+          currentUser: userAuth
+        })
+      }
     })
 
   }
