@@ -4,7 +4,7 @@ import MenuItem from './menu.component';
 const MenuList = ({ menuList }) => {
     return (
         <div className="directory-menu">
-            { menuList.map(({id,...otherItems}) => <MenuItem {...otherItems}></MenuItem>)}
+            { menuList.map(({id,...otherItems}) => <MenuItem key={id} {...otherItems}></MenuItem>)}
         </div>
 
     )
