@@ -7,15 +7,14 @@ import Shop from './components/pages/shop.component';
 import SignInSignUp from './components/pages/signin-signup/signin-signup.component';
 import { auth, createUserProfileDoc } from './firebase/firebase.util';
 import { connect } from 'react-redux';
-import { setCurrentUser } from './redux/user.action';
+import { setCurrentUser } from './redux/user/user.action';
 
 class App extends React.Component {
 
 
- 
   unSubsCribeFromAuth = null;
   componentDidMount() {
-    const {setCurrentUser} = this.props;
+    const { setCurrentUser } = this.props;
     this.unSubsCribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
 
@@ -23,18 +22,16 @@ class App extends React.Component {
         const userRef = await createUserProfileDoc(userAuth);
 
         userRef.onSnapshot(async snapShot => {
-         setCurrentUser({
-              id: snapShot.id,
-              ...snapShot.data()
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
           }, () => {
             console.log(this.state);
           });
 
         })
       } else {
-        setCurrentUser({
-           userAuth
-        })
+        setCurrentUser(null)
       }
     })
 
@@ -43,6 +40,7 @@ class App extends React.Component {
     this.unSubsCribeFromAuth();
   }
   render() {
+    console.log('test ', this.props);
     return (
       <div className="App">
         <HeaderComp />
@@ -51,16 +49,22 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/Shop" component={Shop} />
           <Route exact path="/SignInSignUp" component={SignInSignUp} />
-
+        
         </Switch>
-
 
       </div>
     );
   }
 }
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
-})
+});
 
-export default connect(null, mapDispatchToProps)(withRouter(App));
+const mapStateToProps = state => ({
+
+  currentUser: state.user
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App));
