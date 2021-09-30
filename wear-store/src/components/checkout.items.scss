@@ -1,0 +1,30 @@
+.item-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 14px;
+    .item-property {
+        display: flex;
+        width: 23%;
+        justify-content: center;
+        align-items: center;
+        font-weight: 1000px;
+        font-size: large;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .quantity {
+            padding: 5px;
+        }
+        &:last-child {
+            width: 8%;
+            cursor: pointer;
+        }
+
+        .up,
+        .down {
+            cursor: pointer;
+        }
+    }
+}

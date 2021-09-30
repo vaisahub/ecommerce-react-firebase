@@ -1,0 +1,46 @@
+.checkout-page {
+    margin: 5%;
+    display: flex;
+    width: 55%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    .checkout-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        .header-block {
+            padding: 10px 14px;
+            font-weight: bold;
+            font-size: large;
+            width: 23%;
+            &:last-child {
+                width: 8%;
+            }
+            justify-self: center;
+           
+        }
+    }
+    .checkout-items {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-around;
+        width: 100%;
+        .empty-cart{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+        }
+    }
+    .total-price {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        font-size: xx-large;
+        font-weight: 1000;
+    }
+}
+
