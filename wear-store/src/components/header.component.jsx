@@ -36,7 +36,7 @@ const HeaderComp = ({ currentUser, cartHidden }) => {
 
                 </div>
                 <div className="option">
-                    <CartIcon />
+                    { currentUser && <CartIcon /> }
                     {
 
 !cartHidden && <CartDropdownComponent key="cartdropdowncomponent" />

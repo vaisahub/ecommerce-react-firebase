@@ -20,7 +20,7 @@ class App extends React.Component {
     this.unSubsCribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
 
-        this.props.history.push(`/`);
+        this.props.history.push(`/shop`);
         const userRef = await createUserProfileDoc(userAuth);
 
         userRef.onSnapshot(async snapShot => {
