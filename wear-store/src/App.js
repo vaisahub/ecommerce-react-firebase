@@ -42,7 +42,6 @@ class App extends React.Component {
     this.unSubsCribeFromAuth();
   }
   render() {
-    console.log('test ', this.props);
     return (
       <div className="App">
         <HeaderComp />
