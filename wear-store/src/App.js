@@ -20,7 +20,7 @@ class App extends React.Component {
     this.unSubsCribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
 
-        this.props.history.push(`/shop`);
+        // this.props.history.push(`/`);
         const userRef = await createUserProfileDoc(userAuth);
 
         userRef.onSnapshot(async snapShot => {
@@ -48,9 +48,9 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/Shop" component={Shop} />
-          <Route exact path="/SignInSignUp" component={SignInSignUp} />
-          <Route exact path="/checkout" component={CheckOut}/> 
+          <Route  path="/Shop" component={Shop} />
+          <Route  path="/SignInSignUp" component={SignInSignUp} />
+          <Route  path="/checkout" component={CheckOut}/> 
         
         </Switch>
 
